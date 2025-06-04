@@ -12,7 +12,7 @@ final class HomeController extends AbstractController
     public function index(): JsonResponse
     {
         return $this->json([
-            'message' => 'Welcome to your new controller!',
+            'message' => 'SA marche enfin !',
             'path' => 'src/Controller/HomeController.php',
         ]);
     }

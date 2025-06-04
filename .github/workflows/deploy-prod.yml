@@ -1,5 +1,4 @@
-name: Deploy to VPS
-
+name: Deploy to VPS in production
 on:
     push:
         branches: [ prod ]
@@ -31,7 +30,7 @@ jobs:
 
                         # Clone du repository
                         echo "📥 Clonage du repository..."
-                        git clone git@github.com:DBouraoui/symfony-7.3-starter.git symfony
+                        git clone git@github.com:DBouraoui/signacore-back.git symfony
                       else
                         echo "🔄 Mise à jour du projet existant"
                         cd /var/www/symfony
@@ -41,7 +40,7 @@ jobs:
 
                         # Pull des dernières modifications
                         echo "📥 Récupération des dernières modifications..."
-                        git pull origin ${{ github.ref_name }}
+                        git pull origin prod
                       fi
 
                       cd /var/www/symfony
