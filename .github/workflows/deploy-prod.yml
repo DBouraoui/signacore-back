@@ -41,7 +41,7 @@ jobs:
 
                         # Pull des dernières modifications
                         echo "📥 Récupération des dernières modifications..."
-                        git pull origin ${{ github.ref_name }}
+                        git pull origin prod
                       fi
 
                       cd /var/www/symfony
