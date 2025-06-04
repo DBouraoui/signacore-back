@@ -17,7 +17,7 @@ prod:
 	sudo docker network prune -f
 	sudo docker compose -f compose.prod.yaml build
 	sudo docker compose -f compose.prod.yaml up -d --wait
-	sudo docker compose -f compose.prod.yaml exec app composer install --no-dev --optimize-autoloader
+	sudo docker compose -f compose.prod.yaml exec app composer install --no-dev --optimize-autoloader -W
 	sudo docker compose -f compose.prod.yaml exec app bin/console doctrine:migrations:migrate --no-interaction
 	sudo docker compose -f compose.prod.yaml exec app bin/console cache:clear --env=prod
 
